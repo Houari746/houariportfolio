@@ -1,0 +1,419 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio de Houari Chafi</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Roboto', sans-serif;
+        }
+
+        body {
+            background: linear-gradient(135deg, #2c3e50, #fd746c);
+            color: #fff;
+            line-height: 1.6;
+            font-size: 16px;
+            scroll-behavior: smooth;
+            overflow-x: hidden;
+        }
+
+        header {
+            background: linear-gradient(135deg, #00bcd4, #ff4081);
+            padding: 15px 0;
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 1000;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+            transition: all 0.3s ease;
+        }
+
+        header .logo {
+            font-size: 2em;
+            font-weight: bold;
+            color: #fff;
+            text-align: center;
+        }
+
+        header nav ul {
+            list-style: none;
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            margin-top: 10px;
+        }
+
+        header nav ul li a {
+            color: white;
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 18px;
+            transition: 0.3s;
+        }
+
+        header nav ul li a:hover {
+            color: #ffeb3b;
+        }
+
+        section {
+            padding: 80px 20px;
+            text-align: center;
+            opacity: 0;
+            transform: translateY(50px);
+            transition: opacity 0.7s ease-out, transform 0.7s ease-out;
+        }
+
+        section.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        h1,
+        h2 {
+            font-size: 2.8em;
+            font-weight: 600;
+        }
+
+        h2 span {
+            color: #ff4081;
+            font-weight: 700;
+        }
+
+        p {
+            max-width: 800px;
+            margin: 20px auto;
+            font-size: 1.1em;
+            opacity: 0.8;
+        }
+
+        ul {
+            list-style: none;
+            margin-top: 20px;
+        }
+
+        ul li {
+            background: rgba(255, 255, 255, 0.1);
+            padding: 15px;
+            margin: 10px 0;
+            border-radius: 8px;
+            transition: transform 0.3s, background 0.3s;
+        }
+
+        ul li:hover {
+            transform: scale(1.05);
+            background: rgba(255, 255, 255, 0.2);
+        }
+
+        .social-links {
+            margin-top: 20px;
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+        }
+
+        .social-links a {
+            display: inline-block;
+            transition: transform 0.3s ease;
+        }
+
+        .social-links a:hover {
+            transform: scale(1.1);
+        }
+
+        .social-links img {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+        }
+
+        footer {
+            padding: 20px;
+            background: linear-gradient(135deg, #1a2531, #2c3e50);
+            text-align: center;
+            margin-top: 40px;
+        }
+
+        .timeline {
+            position: relative;
+            max-width: 900px;
+            margin: 50px auto;
+        }
+
+        .timeline::before {
+            content: '';
+            position: absolute;
+            left: 50%;
+            width: 4px;
+            height: 100%;
+            background: #ff4081;
+            transform: translateX(-50%);
+            top: 0;
+        }
+
+        .timeline-item {
+            display: flex;
+            margin-bottom: 30px;
+            position: relative;
+            opacity: 0;
+            transform: translateX(50px);
+            transition: opacity 0.5s, transform 0.5s;
+        }
+
+        .timeline-item.visible {
+            opacity: 1;
+            transform: translateX(0);
+        }
+
+        .timeline-item:nth-child(even) {
+            flex-direction: row-reverse;
+        }
+
+        .timeline-icon {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background-color: #fff;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin: 0 20px;
+        }
+
+        .timeline-icon img {
+            width: 20px;
+            height: 20px;
+        }
+
+        .timeline-content {
+            max-width: 500px;
+            background-color: rgba(255, 255, 255, 0.1);
+            padding: 20px;
+            border-radius: 8px;
+            transition: background-color 0.3s ease;
+        }
+
+        .timeline-content:hover {
+            background-color: rgba(255, 255, 255, 0.2);
+        }
+
+        .timeline-content h2 {
+            font-size: 1.6em;
+            margin: 0;
+        }
+
+        .timeline-content .date {
+            font-weight: 600;
+            color: #ff4081;
+            margin-bottom: 10px;
+        }
+        #interets {
+        background-color: rgba(255, 255, 255, 0.1);
+        padding: 50px 20px;
+        text-align: center;
+    }
+
+    #interets h1 {
+        font-size: 2.5em;
+        margin-bottom: 20px;
+    }
+
+    #interets p {
+        max-width: 800px;
+        margin: 20px auto;
+        font-size: 1.2em;
+        opacity: 0.8;
+    }
+
+    .interests {
+        list-style: none;
+        display: flex;
+        justify-content: center;
+        gap: 40px;
+        flex-wrap: wrap;
+        margin-top: 30px;
+    }
+
+    .interests li {
+        background: rgba(255, 255, 255, 0.1);
+        padding: 15px 25px;
+        border-radius: 8px;
+        transition: transform 0.3s, background 0.3s;
+        font-size: 1.2em;
+    }
+
+    .interests li:hover {
+        transform: scale(1.05);
+        background: rgba(255, 255, 255, 0.2);
+    }
+
+    .interest-icon {
+        margin-right: 10px;
+        font-size: 1.5em;
+    }
+   </style>
+</head>
+
+<body>
+    <header>
+        <div class="logo">E-Portfolio de Houari Chafi</div>
+        <nav>
+            <ul>
+                <li><a href="#home">Accueil</a></li>
+                <li><a href="#competences">Compétences</a></li>
+                <li><a href="#certifications">Certifications</a></li>
+                <li><a href="#parcours">Parcours Scolaire</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section id="home">
+        <h1>Bonjour,</h1>
+        <h2>Je suis <span>Houari Chafi</span></h2>
+        <p>Étudiant passionné par l'informatique. Découvrez mes compétences, certifications et mon parcours.</p>
+    </section>
+
+    <section id="competences">
+        <h1 style="font-size: 2.5em;">Mes Compétences</h1>
+        
+        <h2 style="font-size: 1.5em;">CEJM</h2>
+        <ul>
+            <li>Environnement d’une entreprise, Agents économiques </li>
+            <li>Marché, Croissance économique, PIB, Contrat, Finalité d'une entreprise</li>
+        </ul>
+        
+        <h2 style="font-size: 1.5em;">Solutions d'Infrastructure</h2>
+        <ul>
+            <li>Infrastructure et architecture réseau</li>
+            <li>Gestion des serveurs et virtualisation</li>
+            <li>Adressage IP</li>
+        </ul>
+        
+        <h2 style="font-size: 1.5em;">Systèmes et Réseaux</h2>
+        <ul>
+            <li>VLAN, SSH, configuration réseau, adresse IP( Sous réseaux), architecture/infrastructure réseau, </li>
+            <li>Linux, Windows, Debian, Ubuntu</li>
+            <li>PHPMyAdmin, MySQLite, MariaDB </li>
+            <li>Protocoles Réseau : SSH, VRRP, NTP, TSL, VPN, DHCP, LDAP, HTTP, HTTPS, FTP, POP3, IRC </li>
+        </ul>
+        
+        <h2 style="font-size: 1.5em;">Langages Informatiques</h2>
+        <ul>
+            <li>CSS, HTML, PHP, Python, JavaScript, SQL</li>
+        </ul>
+        
+        <h2 style="font-size: 1.5em;">Cybersécurité</h2>
+        <ul>
+            <li>Protection des données et RGPD, Sensibilisation des utilisateurs, Charte Informatique</li>
+            <li>Sécurité des équipements, Pare-feu/Proxy, EBIOS/PIA, Malwares, </li>
+            <li>Normes CNIL, Données à caractère personnelles </li>
+        </ul>
+        
+        <h2 style="font-size: 1.5em;">OS</h2>
+        <ul>
+            <li>Linux, Windows, MacOS, Ubuntu, Debian</li>
+        </ul>
+    </section>
+    <section id="interets">
+        <h1>Mes Centres d'Intérêt</h1>
+        <p>Voici quelques-uns de mes centres d’intérêt qui enrichissent mon quotidien et nourrissent ma créativité.</p>
+        <ul class="interests">
+            <li><i class="interest-icon">📚</i>Lectures (Manga, Romans)</li>
+            <li><i class="interest-icon">⚽</i>Sport (Football, Judo)</li>
+            <li><i class="interest-icon">🎮</i>Jeux vidéo</li>
+            <li><i class="interest-icon">🎨</i>3D (novice en Blender)</li>
+        </ul>
+    </section>
+    <section id="certifications">
+        <h1>Mes Certifications</h1>
+        <ul>
+            <li>Certification Pix <br> <img src="pix.png" width="350"></li>
+            <li>Certification Cisco Packet Tracer <br> <img src="cisco.png" width="350"></li>
+            <li>Certification E-Sensibilisation Cybersécurité <br> <img src="sens.png" width="350"></li>
+        </ul>
+    </section>
+
+    <section id="parcours">
+        <h1>Mon Parcours Scolaire</h1>
+        <div class="timeline">
+            <div class="timeline-item">
+                <div class="timeline-icon"><img src="turgot.jpg" alt="Lycée"></div>
+                <div class="timeline-content">
+                    <h2>BTS à Turgot</h2>
+                    <span class="date">2024-2026</span>
+                    <p>En cours d'obtention d'un BTS SIO (Service informatique aux organisations) option SISR (solution d'infrastructure systèmes et réseaux)</p>
+                </div>
+            </div>
+
+            <div class="timeline-item">
+                <div class="timeline-icon"><img src="ae.png" alt="EPITA"></div>
+                <div class="timeline-content">
+                    <h2>Lycée Albert Einstein</h2>
+                    <span class="date">2021-2024</span>
+                    <p>Baccalauréat technologique en STMG, option Gestion Finance</p>
+                </div>
+            </div>
+
+            <div class="timeline-item">
+                <div class="timeline-icon"><img src="en.png" alt="ESIEE-IT"></div>
+                <div class="timeline-content">
+                    <h2>Collège Jean Macé</h2>
+                    <span class="date">2017-2021</span>
+                    <p>Diplome National du brevet</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact">
+        <h1>Contact</h1>
+        <p>Vous pouvez me contacter via mon email ou via mes réseaux sociaux :</p>
+        <div class="social-links">
+            <a href="https://www.linkedin.com/in/houari-chafi-4ba941348/">
+                <img src="linkedin.png" alt="LinkedIn">
+            </a>
+            <a href="mailto:example@example.com">
+                <img src="mail.png" alt="Email">
+            </a>
+            <a href="https://github.com/HouariChafi">
+                <img src="github.png" alt="GitHub">
+            </a>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2025 Houari Chafi. Tous droits réservés.</p>
+    </footer>
+
+    <script>
+        // Fonction de visibilité au défilement
+        const sections = document.querySelectorAll('section');
+        window.addEventListener('scroll', () => {
+            sections.forEach(section => {
+                if (window.scrollY + window.innerHeight >= section.offsetTop + 300) { // Augmenté de 100 à 300
+                    section.classList.add('visible');
+                }
+            });
+        });
+
+        // Animation des éléments de la timeline
+        const timelineItems = document.querySelectorAll('.timeline-item');
+        window.addEventListener('scroll', () => {
+            timelineItems.forEach(item => {
+                if (window.scrollY + window.innerHeight >= item.offsetTop + 300) { // Augmenté de 100 à 300
+                    item.classList.add('visible');
+                }
+            });
+        });
+    </script>
+</body>
+
+</html>
