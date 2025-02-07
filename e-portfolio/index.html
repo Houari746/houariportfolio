@@ -214,51 +214,52 @@
             color: #ff4081;
             margin-bottom: 10px;
         }
-        #interets {
-        background-color: rgba(255, 255, 255, 0.1);
-        padding: 50px 20px;
-        text-align: center;
-    }
+        
+        #interets, #projets, #veilles {
+            background-color: rgba(255, 255, 255, 0.1);
+            padding: 50px 20px;
+            text-align: center;
+        }
 
-    #interets h1 {
-        font-size: 2.5em;
-        margin-bottom: 20px;
-    }
+        #interets h1, #projets h1, #veilles h1 {
+            font-size: 2.5em;
+            margin-bottom: 20px;
+        }
 
-    #interets p {
-        max-width: 800px;
-        margin: 20px auto;
-        font-size: 1.2em;
-        opacity: 0.8;
-    }
+        #interets p, #projets p, #veilles p {
+            max-width: 800px;
+            margin: 20px auto;
+            font-size: 1.2em;
+            opacity: 0.8;
+        }
 
-    .interests {
-        list-style: none;
-        display: flex;
-        justify-content: center;
-        gap: 40px;
-        flex-wrap: wrap;
-        margin-top: 30px;
-    }
+        .interests, .projects, .veils {
+            list-style: none;
+            display: flex;
+            justify-content: center;
+            gap: 40px;
+            flex-wrap: wrap;
+            margin-top: 30px;
+        }
 
-    .interests li {
-        background: rgba(255, 255, 255, 0.1);
-        padding: 15px 25px;
-        border-radius: 8px;
-        transition: transform 0.3s, background 0.3s;
-        font-size: 1.2em;
-    }
+        .interests li, .projects li, .veils li {
+            background: rgba(255, 255, 255, 0.1);
+            padding: 15px 25px;
+            border-radius: 8px;
+            transition: transform 0.3s, background 0.3s;
+            font-size: 1.2em;
+        }
 
-    .interests li:hover {
-        transform: scale(1.05);
-        background: rgba(255, 255, 255, 0.2);
-    }
+        .interests li:hover, .projects li:hover, .veils li:hover {
+            transform: scale(1.05);
+            background: rgba(255, 255, 255, 0.2);
+        }
 
-    .interest-icon {
-        margin-right: 10px;
-        font-size: 1.5em;
-    }
-   </style>
+        .interest-icon {
+            margin-right: 10px;
+            font-size: 1.5em;
+        }
+    </style>
 </head>
 
 <body>
@@ -283,7 +284,6 @@
 
     <section id="competences">
         <h1 style="font-size: 2.5em;">Mes Compétences</h1>
-        
         <h2 style="font-size: 1.5em;">CEJM</h2>
         <ul>
             <li>Environnement d’une entreprise, Agents économiques </li>
@@ -322,6 +322,22 @@
             <li>Linux, Windows, MacOS, Ubuntu, Debian</li>
         </ul>
     </section>
+    <section id="projets">
+        <h1>Mes Projets</h1>
+        <ul>
+            <li>Projet 1 - Création d'un site web en HTML/CSS, JavaScript, CSS</li>
+            <li>Projet 2 - Création d'une architecture et une infrastructure réseau d'une entreprise</li>
+            <li>Projet 3 - Création d'un infrastructure client serveur pour une entreprise de conception 3D</li>
+        </ul>
+    </section>
+    <section id="veilles">
+        <h1>Veilles Technologiques</h1>
+        <p>Consultez mes dernières veilles technologiques concernant la Cybersécurité. Vous pouvez également télécharger les documents PDF correspondants :</p>
+        <ul class="veils">
+            <li><a href="VeilleCybersecuriter.pdf" target="_blank">Télécharger la veille Cybersécurité - Janvier 2025</a></li>
+        </ul>
+    </section>
+
     <section id="interets">
         <h1>Mes Centres d'Intérêt</h1>
         <p>Voici quelques-uns de mes centres d’intérêt qui enrichissent mon quotidien et nourrissent ma créativité.</p>
@@ -332,6 +348,7 @@
             <li><i class="interest-icon">🎨</i>3D (novice en Blender)</li>
         </ul>
     </section>
+
     <section id="certifications">
         <h1>Mes Certifications</h1>
         <ul>
