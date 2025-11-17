@@ -40,13 +40,13 @@
         .timeline-content h2 { font-size: 1.6em; margin: 0; }
         .timeline-content .date { font-weight: 600; color: #ff4081; margin-bottom: 10px; }
         
-        #interets, #projets, #veilles, #stage, #apropos, #synthese { 
+        #interets, #projets, #veilles, #stage, #apropos, #synthese, #architecture { 
             background-color: rgba(255, 255, 255, 0.1);
             padding: 50px 20px;
             text-align: center;
             margin-top: 40px;
         }
-        #interets h1, #projets h1, #veilles h1, #stage h1, #apropos h1, #synthese h1 { 
+        #interets h1, #projets h1, #veilles h1, #stage h1, #apropos h1, #synthese h1, #architecture h1 { 
             font-size: 2.5em;
             margin-bottom: 20px;
         }
@@ -108,7 +108,7 @@
             <li><a href="#parcours">Parcours Scolaire</a></li>
             <li><a href="#stage">Mon Stage</a></li>
             <li><a href="#projets">Projets</a></li>
-            <li><a href="#veilles">Veilles Technologiques</a></li>
+            <li><a href="#architecture">Architecture</a></li> <li><a href="#veilles">Veilles Technologiques</a></li>
             <li><a href="#apropos">À propos de moi</a></li>
             <li><a href="#contact">Contact</a></li>
         </ul>
@@ -157,8 +157,11 @@
 <section id="synthese">
     <h1>Tableau de Synthèse</h1>
     <p class="download-link">
-        <a href="synthese_houari.ods" download="synthese_houari.ods" style="color: #ffeb3b; font-weight: bold; text-decoration: none;">
+        <a href="synthese_houari.ods" download="synthese_houari.ods" style="color: #ffeb3b; font-weight: bold; text-decoration: none; margin-right: 20px;">
             📥 Télécharger le document de synthèse (ODS)
+        </a>
+        <a href="https://example.com/documentation-synthese" target="_blank" style="color: #00bcd4; font-weight: bold; text-decoration: none;">
+            🔗 Documentation Synthèse
         </a>
     </p>
 
@@ -170,9 +173,12 @@
 
 <section id="stage">
     <h1>Mon Stage</h1>
-    <p>En première année de BTS SIO option SISR, j’ai effectué un stage au sein de <strong>Webedia</strong>.  
+    <p>En première année de BTS SIO option SISR, j’ai effectué un stage au sein de <strong>Webedia</strong>.  
     Ce stage m’a permis de découvrir le monde professionnel et de développer mes compétences en systèmes et réseaux.</p>
-    <p><a href="rapport_stage.pdf" download="rapport_stage_Houari.pdf">📄 Télécharger mon rapport de stage</a></p>
+    <p>
+        <a href="rapport_stage.pdf" download="rapport_stage_Houari.pdf" style="margin-right: 20px;">📄 Télécharger mon rapport de stage</a>
+        <a href="https://example.com/documentation-stage" target="_blank" style="color: #00bcd4; font-weight: bold; text-decoration: none;">🔗 Documentation Stage</a>
+    </p>
 </section>
 
 <section id="projets">
@@ -189,9 +195,9 @@
         </a>
         <br>
         <strong style="color: #00bcd4;">Documentation en ligne SP1 :</strong>
-        <a href="https://learn.microsoft.com/fr-fr/windows-server/" target="_blank" style="color: #00bcd4; margin: 0 5px;">[Windows Server]</a>
-        <a href="https://learn.microsoft.com/en-us/windows/resources/" target="_blank" style="color: #00bcd4; margin: 0 5px;">[Windows Client]</a>
-        <a href="https://pve.proxmox.com/pve-docs/" style="color: #00bcd4; margin: 0 5px;">[Proxmox]</a>
+        <a href="https://github.com/Houari746/SP1-Projet-Code" target="_blank" style="color: #00bcd4; margin: 0 5px;">[Lien GitHub]</a>
+        <a href="https://example.com/sp1-annexe" target="_blank" style="color: #00bcd4; margin: 0 5px;">[Lien Annexe 1]</a>
+        <a href="https://example.com/sp1-rapport" target="_blank" style="color: #00bcd4; margin: 0 5px;">[Lien Rapport Tech]</a>
     </p>
 
     <p style="margin-top: 30px; line-height: 2;">
@@ -200,12 +206,17 @@
         </a>
         <br>
         <strong style="color: #00bcd4;">Documentation en ligne SP2 :</strong>
-        <a href="https://learn.microsoft.com/fr-fr/intune/configmgr/mdt/" target="_blank" style="color: #00bcd4; margin: 0 5px;">[MDT]</a>
-        
-        
+        <a href="https://github.com/Houari746/SP2-Projet-Réseau" target="_blank" style="color: #00bcd4; margin: 0 5px;">[Lien GitHub]</a>
+        <a href="https://example.com/sp2-schema" target="_blank" style="color: #00bcd4; margin: 0 5px;">[Lien Schémas]</a>
+        <a href="https://example.com/sp2-tests" target="_blank" style="color: #00bcd4; margin: 0 5px;">[Lien Tests]</a>
     </p>
 </section>
 
+<section id="architecture">
+    <h1>Architecture Réseau</h1>
+    <p>Voici un schéma d'une des architectures réseaux que j'ai conçue dans le cadre de mes projets :</p>
+    <img src="architecture_reseau.png" alt="Schéma d'Architecture Réseau" style="max-width: 90%; height: auto; margin-top: 20px; border-radius: 8px; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4);">
+</section>
 <section id="veilles">
     <h1>Veilles Technologiques</h1>
     <p>Consultez mes dernières veilles technologiques concernant la cybersécurité :</p>
@@ -271,8 +282,8 @@
 
 <section id="apropos">
     <h1>À propos de moi</h1>
-    <p>Je m’appelle <strong>Houari Chafi</strong>, étudiant en BTS SIO option SISR au lycée Turgot.  
-    Passionné par les réseaux etla cybersécurité , je m’intéresse particulièrement aux nouvelles technologies.  
+    <p>Je m’appelle <strong>Houari Chafi</strong>, étudiant en BTS SIO option SISR au lycée Turgot.  
+    Passionné par les réseaux etla cybersécurité , je m’intéresse particulièrement aux nouvelles technologies.  
     Curieux, motivé et toujours prêt à apprendre, je cherche à évoluer dans le domaine de l’informatique pour devenir un professionnel compétent et polyvalent.</p>
 </section>
 
@@ -281,7 +292,7 @@
     <p>Vous pouvez me contacter via mon email ou mes réseaux :</p>
     <div class="social-links">
         <a href="https://www.linkedin.com/in/houari-chafi-4ba941348/"><img src="linkedin.PNG"></a>
-        <a href="mailto:example@example.com"><img src="mail.PNG"></a>
+        <a href="mailto:houarichafi@yahoo.com"><img src="mail.PNG"></a>
         <a href="https://github.com/Houari746"><img src="github.PNG"></a>
     </div>
 </section>
@@ -310,5 +321,3 @@
 </script>
 </body>
 </html>
-
-
